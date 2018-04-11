@@ -60,21 +60,25 @@ class DoublyLinkedList :
 		foundNode = self.searchElement(element)
 		if foundNode is not None:
 			print foundNode.data
-			print foundNode.left.data
+			foundNode.left.right = foundNode.right
+			foundNode.right.left = foundNode.left
 		else :
 			print "\n Abe kuch hain hi nahi delete karne ke liye hurrrrr \n"
 			pass
 
 linkedList = DoublyLinkedList()
-linkedList.addNode(100)
-linkedList.addNode(99)
-linkedList.addNode(87)
+for x in range(0,5):
+	linkedList.addNode(x)
+	
 linkedList.printList()
 
 
 linkedList.searchElement(1)
 linkedList.searchElement(100)
 
-linkedList.deleteElement(100)
+linkedList.deleteElement(99)
+
+linkedList.printList()
+
 
 
